@@ -1,4 +1,4 @@
-# SourceLens 技术验证
+# SourceLens Week 7 Mock 验证
 
 ## 验证目标
 
@@ -30,9 +30,13 @@
 - 尚未从真实 HTML 中提取正文。
 - 尚未生成多来源交叉验证报告。
 
-## Week 8 计划
+## 后续状态
 
-- 将 mock 请求替换为真实 httpx 请求
-- 使用 BeautifulSoup 提取正文
-- 增加 URL 和内网地址安全检查
-- 生成来源对比报告
+Week 7 的 mock 验证完成后，真实 httpx 抓取、URL 与内网检查、
+重定向限制、正文提取和交叉验证已在项目根目录实现。
+
+当前能力、运行方式和剩余限制见：
+
+```text
+D:\code\sourcelens\README.md
+```
