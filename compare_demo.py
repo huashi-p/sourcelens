@@ -1,8 +1,13 @@
 import asyncio
 import json
 
+from pathlib import Path
+
+from report import render_markdown
 from compare import compare_sources
 from fetcher import fetch_sources
+
+from report import render_markdown, verify_report
 
 
 async def main():
@@ -42,6 +47,17 @@ async def main():
         return
 
     print(json.dumps(report, ensure_ascii=False, indent=2))
+
+    verification = verify_report(report, sources)
+
+    if not verification["ok"]:
+        raise RuntimeError(verification["issues"])
+
+    markdown = render_markdown(report)
+    
+    output = Path(__file__).parent / "latest-report.md"
+    output.write_text(markdown, encoding="utf-8")
+    print(f"报告已写入：{output}")
 
 
 if __name__ == "__main__":

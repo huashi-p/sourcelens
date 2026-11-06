@@ -209,3 +209,128 @@ def test_compare_attaches_verified_source_urls(monkeypatch):
             "error": "timeout",
         }
     ]
+
+def test_compare_accepts_verified_common_and_conflict(
+    monkeypatch,
+):
+    sources = [
+        SourceStatus(
+            url="https://a.example.com",
+            final_url="https://a.example.com/final",
+            ok=True,
+            title="A",
+            text="FastAPI 可以使用 Semaphore 限制并发。",
+        ),
+        SourceStatus(
+            url="https://b.example.com",
+            final_url="https://b.example.com/final",
+            ok=True,
+            title="B",
+            text="Semaphore 用于控制异步任务并发。",
+        ),
+        SourceStatus(
+            url="https://failed.example.com",
+            ok=False,
+            error="timeout",
+        ),
+    ]
+
+    async def fake_create(**kwargs):
+        content = json.dumps({
+            "common_points": [
+                {
+                    "text": "Semaphore 可以限制并发",
+                    "evidence_quote": "Semaphore 可以限制并发",
+                    "source_ids": ["SOURCE_1", "SOURCE_2"],
+                }
+            ],
+            "conflicts": [
+                {
+                    "text": "两个来源对适用场景的描述不同",
+                    "evidence_quote": "适用场景不同",
+                    "source_ids": ["SOURCE_1", "SOURCE_2"],
+                }
+            ],
+            "unanswered": [],
+            "limitations": [],
+        })
+        message = SimpleNamespace(content=content)
+        choice = SimpleNamespace(message=message)
+        return SimpleNamespace(choices=[choice])
+
+    fake_client = SimpleNamespace(
+        chat=SimpleNamespace(
+            completions=SimpleNamespace(create=fake_create)
+        )
+    )
+    monkeypatch.setattr(compare, "client", fake_client)
+
+    report = run(compare.compare_sources(
+        "如何限制并发",
+        sources,
+    ))
+
+    assert report["common_points"][0]["source_urls"] == [
+        "https://a.example.com/final",
+        "https://b.example.com/final",
+    ]
+    assert report["conflicts"][0]["source_urls"] == [
+        "https://a.example.com/final",
+        "https://b.example.com/final",
+    ]
+    assert report["failed_sources"] == [
+        {
+            "url": "https://failed.example.com",
+            "error": "timeout",
+        }
+    ]
+
+
+def test_compare_rejects_unknown_source_id(monkeypatch):
+    sources = [
+        SourceStatus(
+            url="https://a.example.com",
+            ok=True,
+            title="A",
+            text="A content",
+        ),
+        SourceStatus(
+            url="https://b.example.com",
+            ok=True,
+            title="B",
+            text="B content",
+        ),
+    ]
+
+    call_count = 0
+
+    async def fake_create(**kwargs):
+        nonlocal call_count
+        call_count += 1
+        content = json.dumps({
+            "common_points": [
+                {
+                    "text": "伪造的观点",
+                    "evidence_quote": "伪造的证据",
+                    "source_ids": ["SOURCE_9"],
+                }
+            ],
+            "conflicts": [],
+            "unanswered": [],
+            "limitations": [],
+        })
+        message = SimpleNamespace(content=content)
+        choice = SimpleNamespace(message=message)
+        return SimpleNamespace(choices=[choice])
+
+    fake_client = SimpleNamespace(
+        chat=SimpleNamespace(
+            completions=SimpleNamespace(create=fake_create)
+        )
+    )
+    monkeypatch.setattr(compare, "client", fake_client)
+
+    with pytest.raises(ValueError):
+        run(compare.compare_sources("比较来源", sources))
+
+    assert call_count == 2
