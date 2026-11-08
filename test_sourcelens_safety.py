@@ -20,6 +20,7 @@ def test_private_and_file_urls_are_blocked():
         "http://127.0.0.1/",
         "http://169.254.169.254/",
         "file:///etc/passwd",
+        "http://example.com:6379/",
     ]:
         with pytest.raises(SourceReadError):
             run(validate_public_url(url))
