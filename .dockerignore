@@ -1,0 +1,11 @@
+.git
+.gitignore
+.venv
+__pycache__
+**/__pycache__
+.pytest_cache
+.idea
+.env
+*.pyc
+latest-report.md
+spikes

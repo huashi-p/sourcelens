@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SourceLens</title>
+  <style>
+    body {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-family: system-ui, sans-serif;
+      line-height: 1.6;
+    }
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+      padding: 10px;
+    }
+    button {
+      padding: 8px 18px;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #f4f4f4;
+      padding: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>SourceLens</h1>
+  <p>输入一个研究问题和 2–5 个公开网址。</p>
+  <textarea id="question" rows="3"></textarea>
+  <textarea
+    id="urls"
+    rows="6"
+    placeholder="每行一个网址"
+  ></textarea>
+  <button id="submit">开始分析</button>
+  <p id="status"></p>
+  <div id="sources"></div>
+  <pre id="report"></pre>
+  <script src="/static/app.js"></script>
+</body>
+</html>
