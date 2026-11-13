@@ -15,3 +15,11 @@ class SourceStatus(BaseModel):
     text: str = ""
     elapsed_ms: float = 0
     error: str = ""
+
+class RagRequest(SourceRequest):
+    top_k: int = Field(default=5, ge=1, le=10)
+
+class ReadRequest(BaseModel):
+    question: str = Field(min_length=5, max_length=2000)
+    url: HttpUrl
+    top_k: int = Field(default=5, ge=1, le=10)

@@ -1,0 +1,1288 @@
+{
+  "dataset_version": "2.0",
+  "captured_at": "2026-11-11",
+  "embedding_model": "BAAI/bge-m3",
+  "top_k": 5,
+  "chunk_size": 800,
+  "chunk_overlap": 120,
+  "overall": {
+    "answerable_count": 20,
+    "generated_answer_count": 20,
+    "keyword": {
+      "recall_at_5": 1.0,
+      "mrr": 0.9166666666666666,
+      "p95_latency_ms": 0.708
+    },
+    "vector": {
+      "recall_at_5": 0.95,
+      "mrr": 0.925,
+      "p95_latency_ms": 205.106,
+      "citation_coverage": 1.0,
+      "citation_correctness": 1.0,
+      "refusal_rate": 1.0
+    }
+  },
+  "domains": {
+    "health": {
+      "answerable_count": 4,
+      "generated_answer_count": 4,
+      "keyword": {
+        "recall_at_5": 1.0,
+        "mrr": 0.875,
+        "p95_latency_ms": 0.708
+      },
+      "vector": {
+        "recall_at_5": 1.0,
+        "mrr": 0.875,
+        "p95_latency_ms": 162.872,
+        "citation_coverage": 1.0,
+        "citation_correctness": 1.0,
+        "refusal_rate": 1.0
+      }
+    },
+    "life-guide": {
+      "answerable_count": 4,
+      "generated_answer_count": 4,
+      "keyword": {
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "p95_latency_ms": 0.083
+      },
+      "vector": {
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "p95_latency_ms": 192.946,
+        "citation_coverage": 1.0,
+        "citation_correctness": 1.0,
+        "refusal_rate": 1.0
+      }
+    },
+    "news": {
+      "answerable_count": 4,
+      "generated_answer_count": 4,
+      "keyword": {
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "p95_latency_ms": 0.061
+      },
+      "vector": {
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "p95_latency_ms": 183.916,
+        "citation_coverage": 1.0,
+        "citation_correctness": 1.0,
+        "refusal_rate": 1.0
+      }
+    },
+    "public-service": {
+      "answerable_count": 4,
+      "generated_answer_count": 4,
+      "keyword": {
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "p95_latency_ms": 0.111
+      },
+      "vector": {
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "p95_latency_ms": 224.702,
+        "citation_coverage": 1.0,
+        "citation_correctness": 1.0,
+        "refusal_rate": 1.0
+      }
+    },
+    "technical": {
+      "answerable_count": 4,
+      "generated_answer_count": 4,
+      "keyword": {
+        "recall_at_5": 1.0,
+        "mrr": 0.7083333333333334,
+        "p95_latency_ms": 1.078
+      },
+      "vector": {
+        "recall_at_5": 0.75,
+        "mrr": 0.75,
+        "p95_latency_ms": 194.909,
+        "citation_coverage": 1.0,
+        "citation_correctness": 1.0,
+        "refusal_rate": 1.0
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "q001",
+      "domain": "technical",
+      "group_id": "technical-documentation",
+      "question": "Semaphore 的内部计数器默认初始值是多少？",
+      "keyword_query": "Semaphore internal counter initial value",
+      "gold_chunk_ids": [
+        181
+      ],
+      "keyword_top_ids": [
+        182,
+        180,
+        181,
+        173,
+        175
+      ],
+      "vector_top_ids": [
+        181,
+        182,
+        180,
+        172,
+        173
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 0.3333333333333333,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 1.078,
+      "vector_latency_ms": 165.88
+    },
+    {
+      "id": "q002",
+      "domain": "technical",
+      "group_id": "technical-documentation",
+      "question": "BoundedSemaphore 与普通 Semaphore 有什么区别？",
+      "keyword_query": "BoundedSemaphore Semaphore release ValueError internal counter",
+      "gold_chunk_ids": [
+        182
+      ],
+      "keyword_top_ids": [
+        182,
+        181,
+        180,
+        173,
+        179
+      ],
+      "vector_top_ids": [
+        182,
+        181,
+        180,
+        173,
+        187
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.389,
+      "vector_latency_ms": 194.909
+    },
+    {
+      "id": "q003",
+      "domain": "technical",
+      "group_id": "technical-documentation",
+      "question": "asyncio.Lock 用于解决什么问题？",
+      "keyword_query": "asyncio lock exclusive access shared resource",
+      "gold_chunk_ids": [
+        173
+      ],
+      "keyword_top_ids": [
+        173,
+        174,
+        177,
+        184,
+        176
+      ],
+      "vector_top_ids": [
+        173,
+        172,
+        174,
+        176,
+        183
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.361,
+      "vector_latency_ms": 161.706
+    },
+    {
+      "id": "q004",
+      "domain": "technical",
+      "group_id": "technical-documentation",
+      "question": "asyncio.Event 的主要作用是什么？",
+      "keyword_query": "asyncio event notify multiple tasks event happened",
+      "gold_chunk_ids": [
+        174
+      ],
+      "keyword_top_ids": [
+        175,
+        174,
+        176,
+        183,
+        173
+      ],
+      "vector_top_ids": [
+        175,
+        176,
+        195,
+        173,
+        183
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 0.0,
+      "keyword_rr": 0.5,
+      "vector_rr": 0.0,
+      "keyword_latency_ms": 0.427,
+      "vector_latency_ms": 162.249
+    },
+    {
+      "id": "q006",
+      "domain": "news",
+      "group_id": "news",
+      "question": "支持实体书店服务全民阅读的通知由多少个部门联合印发？",
+      "keyword_query": "部门 联合印发 实体书店 全民阅读 通知",
+      "gold_chunk_ids": [
+        198
+      ],
+      "keyword_top_ids": [
+        198,
+        199,
+        200
+      ],
+      "vector_top_ids": [
+        198,
+        199,
+        200
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.061,
+      "vector_latency_ms": 166.838
+    },
+    {
+      "id": "q007",
+      "domain": "news",
+      "group_id": "news",
+      "question": "实体书店政策提出实施哪项店长成长计划？",
+      "keyword_query": "千名店长 成长培训计划 书店",
+      "gold_chunk_ids": [
+        198
+      ],
+      "keyword_top_ids": [
+        198,
+        199,
+        200
+      ],
+      "vector_top_ids": [
+        198,
+        199,
+        200
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.05,
+      "vector_latency_ms": 183.916
+    },
+    {
+      "id": "q008",
+      "domain": "news",
+      "group_id": "news",
+      "question": "文章介绍的磐安小城位于哪个省？",
+      "keyword_query": "浙江 群山 磐安 宝藏小城",
+      "gold_chunk_ids": [
+        200
+      ],
+      "keyword_top_ids": [
+        200,
+        198,
+        199
+      ],
+      "vector_top_ids": [
+        200,
+        199,
+        198
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.052,
+      "vector_latency_ms": 175.403
+    },
+    {
+      "id": "q009",
+      "domain": "news",
+      "group_id": "news",
+      "question": "磐安拥有哪些与药材、茶叶相关的代表性称号？",
+      "keyword_query": "药材之乡 黄精之乡 生态龙井茶之乡 孔氏家庙",
+      "gold_chunk_ids": [
+        200
+      ],
+      "keyword_top_ids": [
+        200,
+        198,
+        199
+      ],
+      "vector_top_ids": [
+        200,
+        199,
+        198
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.052,
+      "vector_latency_ms": 146.674
+    },
+    {
+      "id": "q011",
+      "domain": "public-service",
+      "group_id": "public-services",
+      "question": "高校毕业生参加就业技能培训和创业培训后，取得哪些证书可以申请职业培训补贴？",
+      "keyword_query": "高校毕业生 职业培训补贴 就业技能培训 创业培训 证书",
+      "gold_chunk_ids": [
+        201
+      ],
+      "keyword_top_ids": [
+        201,
+        202,
+        203,
+        204,
+        205
+      ],
+      "vector_top_ids": [
+        201,
+        202,
+        206,
+        203,
+        205
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.087,
+      "vector_latency_ms": 146.997
+    },
+    {
+      "id": "q012",
+      "domain": "public-service",
+      "group_id": "public-services",
+      "question": "吸纳哪些青年参加就业见习的单位可以申请就业见习补贴？",
+      "keyword_query": "就业见习补贴 离校2年内 未就业高校毕业生 登记失业青年",
+      "gold_chunk_ids": [
+        201
+      ],
+      "keyword_top_ids": [
+        201,
+        205,
+        202,
+        203,
+        204
+      ],
+      "vector_top_ids": [
+        201,
+        202,
+        206,
+        205,
+        203
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.111,
+      "vector_latency_ms": 157.655
+    },
+    {
+      "id": "q013",
+      "domain": "public-service",
+      "group_id": "public-services",
+      "question": "调查显示，公众对居家养老服务的期待已经从哪些方面拓展到哪些方面？",
+      "keyword_query": "居家养老服务 基本生活照料 专业护理 康复支持 应急响应 居家安全",
+      "gold_chunk_ids": [
+        203
+      ],
+      "keyword_top_ids": [
+        203,
+        204,
+        206,
+        205,
+        207
+      ],
+      "vector_top_ids": [
+        203,
+        204,
+        207,
+        206,
+        205
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.088,
+      "vector_latency_ms": 224.702
+    },
+    {
+      "id": "q014",
+      "domain": "public-service",
+      "group_id": "public-services",
+      "question": "有多少受访者希望尽可能由固定人员提供居家养老服务？",
+      "keyword_query": "68.53% 受访者 固定人员 居家养老服务",
+      "gold_chunk_ids": [
+        204,
+        205
+      ],
+      "keyword_top_ids": [
+        204,
+        205,
+        203,
+        206,
+        207
+      ],
+      "vector_top_ids": [
+        204,
+        203,
+        205,
+        206,
+        207
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.085,
+      "vector_latency_ms": 205.106
+    },
+    {
+      "id": "q016",
+      "domain": "health",
+      "group_id": "health",
+      "question": "WHO 如何定义身体活动？",
+      "keyword_query": "WHO physical activity bodily movement skeletal muscles energy expenditure",
+      "gold_chunk_ids": [
+        209
+      ],
+      "keyword_top_ids": [
+        209,
+        208,
+        211,
+        216,
+        218
+      ],
+      "vector_top_ids": [
+        209,
+        215,
+        218,
+        214,
+        221
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.672,
+      "vector_latency_ms": 139.76
+    },
+    {
+      "id": "q017",
+      "domain": "health",
+      "group_id": "health",
+      "question": "全球建议成年人每周至少进行多少分钟中等强度身体活动？",
+      "keyword_query": "global recommendations 150 minutes moderate-intensity physical activity per week",
+      "gold_chunk_ids": [
+        216
+      ],
+      "keyword_top_ids": [
+        216,
+        208,
+        209,
+        217,
+        218
+      ],
+      "vector_top_ids": [
+        216,
+        215,
+        209,
+        208,
+        217
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.642,
+      "vector_latency_ms": 157.914
+    },
+    {
+      "id": "q018",
+      "domain": "health",
+      "group_id": "health",
+      "question": "10 岁以上人群每天建议至少摄入多少克水果和蔬菜？",
+      "keyword_query": "older than 10 years 400 grams fruits vegetables per day",
+      "gold_chunk_ids": [
+        227
+      ],
+      "keyword_top_ids": [
+        228,
+        227,
+        217,
+        222,
+        236
+      ],
+      "vector_top_ids": [
+        228,
+        227,
+        241,
+        234,
+        237
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 0.5,
+      "vector_rr": 0.5,
+      "keyword_latency_ms": 0.654,
+      "vector_latency_ms": 150.998
+    },
+    {
+      "id": "q019",
+      "domain": "health",
+      "group_id": "health",
+      "question": "WHO 建议成年人每天盐摄入量低于多少？",
+      "keyword_query": "adults salt intake less than 5 grams per day",
+      "gold_chunk_ids": [
+        236
+      ],
+      "keyword_top_ids": [
+        236,
+        228,
+        237,
+        235,
+        217
+      ],
+      "vector_top_ids": [
+        236,
+        237,
+        238,
+        215,
+        228
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.708,
+      "vector_latency_ms": 162.872
+    },
+    {
+      "id": "q021",
+      "domain": "life-guide",
+      "group_id": "life-guide",
+      "question": "2025 年 11 月至 2026 年 10 月，海南离岛免税购物金额是多少？",
+      "keyword_query": "海口海关 海南 离岛免税 购物金额 334.5亿元",
+      "gold_chunk_ids": [
+        253
+      ],
+      "keyword_top_ids": [
+        253,
+        254,
+        255,
+        256
+      ],
+      "vector_top_ids": [
+        253,
+        254,
+        256,
+        255
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.07,
+      "vector_latency_ms": 185.611
+    },
+    {
+      "id": "q022",
+      "domain": "life-guide",
+      "group_id": "life-guide",
+      "question": "海南离岛免税商品品类从多少大类扩充到了多少大类？",
+      "keyword_query": "离岛免税商品品类 45大类 47大类 国内商品",
+      "gold_chunk_ids": [
+        253
+      ],
+      "keyword_top_ids": [
+        253,
+        254,
+        255,
+        256
+      ],
+      "vector_top_ids": [
+        253,
+        254,
+        256,
+        255
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.062,
+      "vector_latency_ms": 192.946
+    },
+    {
+      "id": "q023",
+      "domain": "life-guide",
+      "group_id": "life-guide",
+      "question": "黑龙江冬季冰雪旅游“百日行动”从什么时候持续到什么时候？",
+      "keyword_query": "黑龙江 冬季冰雪旅游 百日行动 2026年11月8日 2027年2月28日",
+      "gold_chunk_ids": [
+        255
+      ],
+      "keyword_top_ids": [
+        255,
+        253,
+        256,
+        254
+      ],
+      "vector_top_ids": [
+        255,
+        256,
+        253,
+        254
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.083,
+      "vector_latency_ms": 136.597
+    },
+    {
+      "id": "q024",
+      "domain": "life-guide",
+      "group_id": "life-guide",
+      "question": "黑龙江为游客提供了哪种高铁车票与景区门票联动优惠？",
+      "keyword_query": "哈伊高铁 哈大齐高铁 高铁车票 景区门票 联动优惠",
+      "gold_chunk_ids": [
+        255
+      ],
+      "keyword_top_ids": [
+        255,
+        253,
+        254,
+        256
+      ],
+      "vector_top_ids": [
+        255,
+        256,
+        254,
+        253
+      ],
+      "keyword_recall_at_5": 1.0,
+      "vector_recall_at_5": 1.0,
+      "keyword_rr": 1.0,
+      "vector_rr": 1.0,
+      "keyword_latency_ms": 0.064,
+      "vector_latency_ms": 173.029
+    }
+  ],
+  "answers": [
+    {
+      "id": "q001",
+      "domain": "technical",
+      "group_id": "technical-documentation",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "Semaphore 的内部计数器默认初始值为 1。",
+        "citations": [
+          {
+            "text": "Semaphore 构造函数签名显示 value 默认值为 1。",
+            "source_id": "SOURCE_3",
+            "evidence_quote": "class\nasyncio.\nSemaphore\n(\nvalue\n=\n1\n)",
+            "url": "https://docs.python.org/3/library/asyncio-sync.html"
+          },
+          {
+            "text": "可选 value 参数给出内部计数器的初始值，默认为 1。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "The optional\nvalue\nargument gives the initial value for the\ninternal counter (\n1\nby default).",
+            "url": "https://docs.python.org/3/library/asyncio-sync.html"
+          }
+        ],
+        "limitations": "资料仅涉及 asyncio.Semaphore；未讨论其他语言或库中的 Semaphore 实现。",
+        "verified_citations": 2
+      },
+      "citation_count": 2,
+      "verified_count": 2
+    },
+    {
+      "id": "q002",
+      "domain": "technical",
+      "group_id": "technical-documentation",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "BoundedSemaphore 是 Semaphore 的一个版本，区别在于：普通 Semaphore 允许 release() 调用次数多于 acquire() 调用次数；而 BoundedSemaphore 在 release() 使内部计数器超过初始 value 时会抛出 ValueError。",
+        "citations": [
+          {
+            "text": "普通 Semaphore 允许 release() 次数多于 acquire() 次数。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "Unlike\nBoundedSemaphore\n,\nSemaphore\nallows\nmaking more\nrelease()\ncalls than\nacquire()\ncalls.",
+            "url": "https://docs.python.org/3/library/asyncio-sync.html"
+          },
+          {
+            "text": "BoundedSemaphore 在 release() 使内部计数器超过初始 value 时抛出 ValueError。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "Bounded Semaphore is a version of\nSemaphore\nthat raises\na\nValueError\nin\nrelease()\nif it\nincreases the internal counter above the initial\nvalue\n.",
+            "url": "https://docs.python.org/3/library/asyncio-sync.html"
+          }
+        ],
+        "limitations": "资料仅涵盖 asyncio 中的 Semaphore 与 BoundedSemaphore，未涉及其他实现或线程版本。",
+        "verified_citations": 2
+      },
+      "citation_count": 2,
+      "verified_count": 2
+    },
+    {
+      "id": "q003",
+      "domain": "technical",
+      "group_id": "technical-documentation",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "asyncio.Lock 实现的是用于 asyncio 任务的互斥锁（mutex lock），用于保证对共享资源的独占访问。",
+        "citations": [
+          {
+            "text": "asyncio.Lock 实现用于 asyncio 任务的互斥锁，用于保证对共享资源的独占访问。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "Implements a mutex lock for asyncio tasks.  Not thread-safe.\nAn asyncio lock can be used to guarantee exclusive access to a\nshared resource.",
+            "url": "https://docs.python.org/3/library/asyncio-sync.html"
+          }
+        ],
+        "limitations": "资料仅说明其用于保证共享资源的独占访问，未进一步展开具体使用场景。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    },
+    {
+      "id": "q004",
+      "domain": "technical",
+      "group_id": "technical-documentation",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "asyncio.Event 管理一个内部标志，该标志可通过 set() 方法设为 true，通过 clear() 方法重置为 false；wait() 方法会阻塞直到标志被设为 true，标志初始为 false。",
+        "citations": [
+          {
+            "text": "Event object manages an internal flag that can be set to true with the set() method and reset to false with the clear() method. The wait() method blocks until the flag is set to true. The flag is set to false initially.",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "Event object manages an internal flag that can be set to\ntrue\nwith the\nset()\nmethod and reset to\nfalse\nwith the\nclear()\nmethod.  The\nwait()\nmethod blocks until the\nflag is set to\ntrue\n.  The flag is set to\nfalse\ninitially.",
+            "url": "https://docs.python.org/3/library/asyncio-sync.html"
+          }
+        ],
+        "limitations": "资料仅描述 Event 的标志管理与 wait 阻塞行为，未给出更概括的“主要作用”定义。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    },
+    {
+      "id": "q006",
+      "domain": "news",
+      "group_id": "news",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "8个部门。",
+        "citations": [
+          {
+            "text": "八部门联合印发通知支持实体书店服务全民阅读",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "八部门联合印发通知支持实体书店服务全民阅读",
+            "url": "https://www.news.cn/ci/20261110/cded13e9519047218157832ed7d6b0ee/c.html"
+          },
+          {
+            "text": "通知由中央宣传部、中央社会工作部、教育部、财政部、住房城乡建设部、商务部、文化和旅游部、国家文物局联合印发",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "中央宣传部、中央社会工作部、教育部、财政部、住房城乡建设部、商务部、文化和旅游部、国家文物局联合印发《中共中央宣传部等关于支持实体书店服务全民阅读的通知》",
+            "url": "https://www.news.cn/ci/20261110/cded13e9519047218157832ed7d6b0ee/c.html"
+          }
+        ],
+        "limitations": "无",
+        "verified_citations": 2
+      },
+      "citation_count": 2,
+      "verified_count": 2
+    },
+    {
+      "id": "q007",
+      "domain": "news",
+      "group_id": "news",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "实体书店政策提出实施“千名店长”成长培训计划。",
+        "citations": [
+          {
+            "text": "通知提出，要提升书店供给质量，实施“千名店长”成长培训计划。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "通知提出,要提升书店供给质量,实施“千名店长”成长培训计划,增强书店选品能力",
+            "url": "https://www.news.cn/ci/20261110/cded13e9519047218157832ed7d6b0ee/c.html"
+          }
+        ],
+        "limitations": "仅依据给定片段，未提供该计划的具体内容或实施细则。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    },
+    {
+      "id": "q008",
+      "domain": "news",
+      "group_id": "news",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "浙江省",
+        "citations": [
+          {
+            "text": "文章开头指出磐安位于浙江的群山之间，后文提到“金华磐安”，金华是浙江省的地级市。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "在浙江的群山之间,藏着一座宝藏小城——磐安。",
+            "url": "https://www.news.cn/ci/20260928/f3c1ef28931642048cd9f8cc6fb76a42/c.html"
+          }
+        ],
+        "limitations": "仅依据SOURCE_1判断；SOURCE_2和SOURCE_3与问题无关。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    },
+    {
+      "id": "q009",
+      "domain": "news",
+      "group_id": "news",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "磐安拥有“中国药材之乡”“中国黄精之乡”“中国生态龙井茶之乡”等代表性称号。",
+        "citations": [
+          {
+            "text": "磐安是中国药材之乡、中国黄精之乡、中国生态龙井茶之乡。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "这里是中国药材之乡、中国黄精之乡、中国生态龙井茶之乡",
+            "url": "https://www.news.cn/ci/20260928/f3c1ef28931642048cd9f8cc6fb76a42/c.html"
+          }
+        ],
+        "limitations": "仅依据SOURCE_1，SOURCE_2和SOURCE_3与问题无关。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    },
+    {
+      "id": "q011",
+      "domain": "public-service",
+      "group_id": "public-services",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "毕业年度高校毕业生参加就业技能培训和创业培训后，取得符合规定证书的可以申请职业培训补贴，这些证书包括：职业资格证书、职业技能等级证书、专项职业能力证书、培训合格证书。",
+        "citations": [
+          {
+            "text": "毕业年度高校毕业生参加就业技能培训和创业培训，培训后取得符合规定证书的（包括职业资格证书、职业技能等级证书、专项职业能力证书、培训合格证书），给予补贴。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "毕业年度高校毕业生参加就业技能培训和创业培训,培训后取得符合规定证书的(包括职业资格证书、职业技能等级证书、专项职业能力证书、培训合格证书),给予补贴。",
+            "url": "https://education.news.cn/20261111/7f86aa9f050d4a78995a3783d6db0d54/c.html"
+          }
+        ],
+        "limitations": "仅依据SOURCE_1中关于职业培训补贴的表述；SOURCE_2至SOURCE_5未提供相关证书信息。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    },
+    {
+      "id": "q012",
+      "domain": "public-service",
+      "group_id": "public-services",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "吸纳离校2年内未就业高校毕业生和16-24岁登记失业青年参加就业见习的单位，可以申请就业见习补贴。",
+        "citations": [
+          {
+            "text": "就业见习补贴的适用对象：吸纳离校2年内未就业高校毕业生和16-24岁登记失业青年参加就业见习的单位。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "对吸纳离校2年内未就业高校毕业生和16-24岁登记失业青年参加就业见习的单位,给予就业见习补贴,用于见习单位支付见习人员见习期间基本生活费、为见习人员办理人身意外伤害保险,以及对见习人员的指导管理费用。",
+            "url": "https://education.news.cn/20261111/7f86aa9f050d4a78995a3783d6db0d54/c.html"
+          }
+        ],
+        "limitations": "仅依据SOURCE_1中关于就业见习补贴的表述作答；SOURCE_2至SOURCE_5未提供相关信息。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    },
+    {
+      "id": "q013",
+      "domain": "public-service",
+      "group_id": "public-services",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "调查显示，公众对居家养老服务的期待正从基本生活照料，延伸至专业护理、康复支持、应急响应和居家安全等多个方面。",
+        "citations": [
+          {
+            "text": "调查显示，公众对居家养老服务的期待正从基本生活照料，延伸至专业护理、康复支持、应急响应和居家安全等多个方面。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "调查显示,随着家庭养老需求日益多元,公众对居家养老服务的期待正从基本生活照料,延伸至专业护理、康复支持、应急响应和居家安全等多个方面。",
+            "url": "https://www.news.cn/politics/20261023/ccf52aabf0bc4d7fb972df57388e1eec/c.html"
+          }
+        ],
+        "limitations": "仅依据给定片段中的调查结论，未提供各拓展方面的具体比例或进一步细分。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    },
+    {
+      "id": "q014",
+      "domain": "public-service",
+      "group_id": "public-services",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "68.53%的受访者希望尽可能由固定人员提供居家养老服务。",
+        "citations": [
+          {
+            "text": "调查中，68.53%的受访者希望尽可能由固定人员提供服务。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "调查中,68.53%的受访者希望尽可能由固定人员提供服务。",
+            "url": "https://www.news.cn/politics/20261023/ccf52aabf0bc4d7fb972df57388e1eec/c.html"
+          },
+          {
+            "text": "调查中，68.53%的受访者希望尽可能由固定人员提供服务。",
+            "source_id": "SOURCE_3",
+            "evidence_quote": "调查中,68.53%的受访者希望尽可能由固定人员提供服务。",
+            "url": "https://www.news.cn/politics/20261023/ccf52aabf0bc4d7fb972df57388e1eec/c.html"
+          }
+        ],
+        "limitations": "调查未说明受访者总人数，仅给出比例。",
+        "verified_citations": 2
+      },
+      "citation_count": 2,
+      "verified_count": 2
+    },
+    {
+      "id": "q016",
+      "domain": "health",
+      "group_id": "health",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "WHO 将身体活动定义为：由骨骼肌产生的、需要消耗能量的任何身体运动。该定义涵盖所有运动，包括休闲时间、往返各地的交通出行，或作为个人工作或家务活动的一部分。中等强度和高强度的身体活动均有益健康。",
+        "citations": [
+          {
+            "text": "WHO 对身体活动的定义",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "WHO defines physical activity as any bodily movement produced by skeletal muscles that requires energy expenditure. Physical activity refers to all movement including during leisure time, for transport to get to and from places, or as part of a person’s work or domestic activities. Both moderate- and vigorous-intensity physical activity improve health.",
+            "url": "https://www.who.int/news-room/fact-sheets/detail/physical-activity"
+          }
+        ],
+        "limitations": "该定义仅来自 WHO 实况报道的概述部分；未提供更详细的定义性文件或分类标准。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    },
+    {
+      "id": "q017",
+      "domain": "health",
+      "group_id": "health",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "全球建议成年人每周至少进行150分钟中等强度身体活动。",
+        "citations": [
+          {
+            "text": "全球建议成年人每周至少进行150分钟中等强度身体活动。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "they do not meet the global recommendations of at least 150 minutes of moderate-intensity physical activity per week.",
+            "url": "https://www.who.int/news-room/fact-sheets/detail/physical-activity"
+          }
+        ],
+        "limitations": "仅依据SOURCE_1中的一处表述；其他来源未直接给出该分钟数。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    },
+    {
+      "id": "q018",
+      "domain": "health",
+      "group_id": "health",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "10 岁以上人群每天建议至少摄入 400 克水果和蔬菜。",
+        "citations": [
+          {
+            "text": "10 岁以上人群每天至少 400 克水果和蔬菜。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "for at least 400 grams of fruits and vegetables per day, with lesser amounts for children under 10",
+            "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet"
+          },
+          {
+            "text": "10 岁以上人群每天至少 400 克水果和蔬菜。",
+            "source_id": "SOURCE_2",
+            "evidence_quote": "Everyone older than 10 years of age should aim for at least 400 grams of fruits and vegetables per day",
+            "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet"
+          }
+        ],
+        "limitations": "资料未说明该建议是否适用于孕妇等特殊人群。",
+        "verified_citations": 2
+      },
+      "citation_count": 2,
+      "verified_count": 2
+    },
+    {
+      "id": "q019",
+      "domain": "health",
+      "group_id": "health",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "WHO 建议成年人每天盐摄入量应低于 5 克（相当于每天 2 克钠）。",
+        "citations": [
+          {
+            "text": "WHO 健康饮食实况报道指出，成年人盐摄入量应限制在每天少于 5 克（每天 2 克钠）。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "In adults, salt intake should be limited to less than 5 grams per day (2 grams per day sodium).",
+            "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet"
+          }
+        ],
+        "limitations": "该建议仅针对成年人；儿童的最大钠摄入量更低，需根据能量摄入估算。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    },
+    {
+      "id": "q021",
+      "domain": "life-guide",
+      "group_id": "life-guide",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "2025年11月至2026年10月，海南离岛免税购物金额为334.5亿元。",
+        "citations": [
+          {
+            "text": "据海口海关统计，2025年11月至2026年10月，海南离岛免税购物金额为334.5亿元。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "据海口海关统计,2025年11月至2026年10月,海南离岛免税购物金额、购物人数、购物数量分别为334.5亿元、487.9万人次、2764.4万件",
+            "url": "https://www.news.cn/travel/20261110/05a9b48025984f68bb7ab17fcd7b924c/c.html"
+          }
+        ],
+        "limitations": "数据来自海口海关统计，仅涵盖离岛免税购物金额，不含其他消费类型。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    },
+    {
+      "id": "q022",
+      "domain": "life-guide",
+      "group_id": "life-guide",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "海南离岛免税商品品类由45大类扩充至47大类。",
+        "citations": [
+          {
+            "text": "离岛免税政策调整后，离岛免税商品品类由45大类扩充至47大类。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "离岛免税商品品类由45大类扩充至47大类",
+            "url": "https://www.news.cn/travel/20261110/05a9b48025984f68bb7ab17fcd7b924c/c.html"
+          }
+        ],
+        "limitations": "仅依据SOURCE_1的表述，未涉及其他来源。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    },
+    {
+      "id": "q023",
+      "domain": "life-guide",
+      "group_id": "life-guide",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "黑龙江省冬季冰雪旅游“百日行动”于2026年11月8日至2027年2月28日全面开展。",
+        "citations": [
+          {
+            "text": "黑龙江冬季冰雪旅游“百日行动”时间",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "黑龙江省将于2026年11月8日至2027年2月28日全面开展冬季冰雪旅游“百日行动”",
+            "url": "https://www.news.cn/travel/20261106/983fae5b8cca4b5cbca913525b7cd857/c.html"
+          }
+        ],
+        "limitations": "仅依据SOURCE_1的报道内容，未涉及其他来源。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    },
+    {
+      "id": "q024",
+      "domain": "life-guide",
+      "group_id": "life-guide",
+      "success": true,
+      "answer": {
+        "answerable": true,
+        "answer": "黑龙江依托哈伊高铁、哈大齐高铁推出“高铁车票+景区门票”联动优惠。",
+        "citations": [
+          {
+            "text": "黑龙江依托哈伊高铁、哈大齐高铁推出“高铁车票+景区门票”联动优惠。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "在基础设施和公共服务方面,黑龙江依托哈伊高铁、哈大齐高铁推出“高铁车票+景区门票”联动优惠,并加密重点客源航班。",
+            "url": "https://www.news.cn/travel/20261106/983fae5b8cca4b5cbca913525b7cd857/c.html"
+          }
+        ],
+        "limitations": "仅说明依托哈伊高铁、哈大齐高铁推出该联动优惠，未提及具体优惠幅度或细则。",
+        "verified_citations": 1
+      },
+      "citation_count": 1,
+      "verified_count": 1
+    }
+  ],
+  "unanswerable_results": [
+    {
+      "id": "q005",
+      "domain": "technical",
+      "group_id": "technical-documentation",
+      "success": true,
+      "answer": {
+        "answerable": false,
+        "answer": "资料中没有给出 asyncio.Semaphore 的具体性能基准数字。这些片段仅描述 Semaphore 的语义、用法和参数，未包含任何性能基准或测量数据。",
+        "citations": [
+          {
+            "text": "Semaphore 的文档描述其内部计数器、acquire/release 行为及 async with 用法，未提及性能基准。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "The preferred way to use a Semaphore is an async with statement:",
+            "url": "https://docs.python.org/3/library/asyncio-sync.html"
+          },
+          {
+            "text": "同步原语总览列出 Semaphore 等原语，未包含性能数据。",
+            "source_id": "SOURCE_2",
+            "evidence_quote": "asyncio has the following basic synchronization primitives:",
+            "url": "https://docs.python.org/3/library/asyncio-sync.html"
+          },
+          {
+            "text": "Semaphore 类定义与参数说明，无基准数字。",
+            "source_id": "SOURCE_3",
+            "evidence_quote": "A Semaphore object.  Not thread-safe.",
+            "url": "https://docs.python.org/3/library/asyncio-sync.html"
+          },
+          {
+            "text": "release 与 BoundedSemaphore 行为说明，无性能基准。",
+            "source_id": "SOURCE_4",
+            "evidence_quote": "Release a semaphore, incrementing the internal counter by one.",
+            "url": "https://docs.python.org/3/library/asyncio-sync.html"
+          }
+        ],
+        "limitations": "所给片段均为 API 文档，未包含任何性能基准或测量结果，因此无法回答具体性能数字。",
+        "verified_citations": 4
+      }
+    },
+    {
+      "id": "q010",
+      "domain": "news",
+      "group_id": "news",
+      "success": true,
+      "answer": {
+        "answerable": false,
+        "answer": "资料中没有规定每个县惠民购书券的具体发放金额。通知仅提到各地通过发放惠民购书券、全民阅读消费券等方式带动图书阅读和销售，未涉及具体金额或按县分配的标准。",
+        "citations": [
+          {
+            "text": "通知明确，要加强财政扶持引导，地方财政支持书店平等参与承接公共阅读服务等政府购买服务项目，中央财政体现绩效奖励，各地通过发放惠民购书券、全民阅读消费券等方式带动图书阅读和销售。",
+            "source_id": "SOURCE_2",
+            "evidence_quote": "各地通过发放惠民购书券、全民阅读消费券等方式带动图书阅读和销售",
+            "url": "https://www.news.cn/ci/20261110/cded13e9519047218157832ed7d6b0ee/c.html"
+          }
+        ],
+        "limitations": "给定片段仅笼统提及惠民购书券，未出现任何具体发放金额或按县分配的规定。",
+        "verified_citations": 1
+      }
+    },
+    {
+      "id": "q015",
+      "domain": "public-service",
+      "group_id": "public-services",
+      "success": true,
+      "answer": {
+        "answerable": false,
+        "answer": "资料中没有列出任何城市居家养老服务的具体收费标准。调查仅提及受访者对单次上门服务可接受价格的分布（近半数选择100元以内），以及收费标准应透明、需整合收费信息等一般性表述，未给出分城市的具体收费金额。",
+        "citations": [
+          {
+            "text": "调查提到费用是家庭关注因素，近半数受访者对单次上门服务可接受价格选择100元以内，价格透明合理是考虑因素。",
+            "source_id": "SOURCE_2",
+            "evidence_quote": "费用是家庭选择和持续使用居家养老服务时关注的重要因素。调查中,近半数受访者对单次上门服务的可接受价格选择了100元以内;价格是否透明合理、平台口碑和真实评价,也是家庭选择服务时重点考虑的因素。",
+            "url": "https://www.news.cn/politics/20261023/ccf52aabf0bc4d7fb972df57388e1eec/c.html"
+          },
+          {
+            "text": "调查建议让居民清楚了解服务内容、人员资质、收费标准和预约方式，但未列出具体收费标准。",
+            "source_id": "SOURCE_3",
+            "evidence_quote": "如何整合分散的信息,让居民清楚了解服务内容、人员资质、收费标准和预约方式,是提高服务可及性的关键。",
+            "url": "https://www.news.cn/politics/20261023/ccf52aabf0bc4d7fb972df57388e1eec/c.html"
+          }
+        ],
+        "limitations": "所给片段仅涉及全国性问卷调查结果与行业观点，未提供任何城市的具体收费价目或标准。",
+        "verified_citations": 2
+      }
+    },
+    {
+      "id": "q020",
+      "domain": "health",
+      "group_id": "health",
+      "success": true,
+      "answer": {
+        "answerable": false,
+        "answer": "给定资料未提供针对高血压患者的具体药物剂量信息。资料仅涉及健康饮食中的钠/钾摄入建议（如成人钾摄入至少90 mmol/天）以及身体活动指南，未提及任何降压药物的名称或剂量。",
+        "citations": [
+          {
+            "text": "资料提到成人钾摄入量建议，但未涉及高血压药物剂量。",
+            "source_id": "SOURCE_1",
+            "evidence_quote": "A potassium intake of at least 90 mmol/day (3510 mg/day) for adults may be beneficial.",
+            "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet"
+          },
+          {
+            "text": "资料说明高钠摄入与血压升高相关，但未给出药物剂量。",
+            "source_id": "SOURCE_2",
+            "evidence_quote": "Sodium and potassium are essential minerals but high intake of sodium (salt) is associated with increased blood pressure which can lead to cardiovascular disease.",
+            "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet"
+          }
+        ],
+        "limitations": "所给片段仅涵盖健康饮食与身体活动的一般性建议，未包含高血压药物治疗或具体药物剂量内容。",
+        "verified_citations": 2
+      }
+    },
+    {
+      "id": "q025",
+      "domain": "life-guide",
+      "group_id": "life-guide",
+      "success": true,
+      "answer": {
+        "answerable": false,
+        "answer": "给定片段未列出任何城市酒店的具体房间价格。",
+        "citations": [],
+        "limitations": "所提供页面内容涉及黑龙江冬季冰雪旅游“百日行动”和海南离岛免税政策，均未提及酒店房间价格信息。",
+        "verified_citations": 0
+      }
+    }
+  ]
+}

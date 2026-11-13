@@ -6,6 +6,14 @@ from contextlib import asynccontextmanager
 
 from rag_models import init_rag_db
 
+from rag_answer import answer_with_citations
+from rag_index import index_sources
+from vector_search import vector_search
+from schemas import (
+    RagRequest,
+    ReadRequest,
+    SourceRequest,
+)
 
 @asynccontextmanager
 async def lifespan(app):
@@ -14,7 +22,6 @@ async def lifespan(app):
 from compare import compare_sources
 from fetcher import fetch_sources
 from report import render_markdown, verify_report
-from schemas import SourceRequest
 
 
 app = FastAPI(
@@ -24,6 +31,54 @@ app = FastAPI(
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 COMPARE_TIMEOUT = 90.0
+
+
+async def answer_from_urls(
+    question,
+    urls,
+    top_k,
+    minimum_successful,
+):
+    sources = await fetch_sources(question, urls)
+    successful = [source for source in sources if source.ok]
+
+    if len(successful) < minimum_successful:
+        raise HTTPException(
+            status_code=422,
+            detail={
+                "error": (
+                    f"成功来源少于 {minimum_successful} 个"
+                ),
+                "sources": [
+                    source.model_dump(mode="json")
+                    for source in sources
+                ],
+            },
+        )
+
+    index_result = await index_sources(successful)
+    chunks = await vector_search(
+        question,
+        top_k=top_k,
+        document_ids=index_result["document_ids"],
+    )
+    answer = await answer_with_citations(question, chunks)
+
+    return {
+        "ok": True,
+        "question": question,
+        "index": index_result,
+        "retrieved_chunks": chunks,
+        "answer": answer,
+        "failed_sources": [
+            {
+                "url": source.url,
+                "error": source.error,
+            }
+            for source in sources
+            if not source.ok
+        ],
+    }
 
 
 @app.get("/health")
@@ -89,3 +144,22 @@ async def compare_endpoint(request: SourceRequest):
         "report": report,
         "markdown": render_markdown(report),
     }
+
+@app.post("/api/rag")
+async def rag_endpoint(request: RagRequest):
+    return await answer_from_urls(
+        request.question,
+        request.urls,
+        request.top_k,
+        minimum_successful=2,
+    )
+
+
+@app.post("/api/read")
+async def read_endpoint(request: ReadRequest):
+    return await answer_from_urls(
+        request.question,
+        [request.url],
+        request.top_k,
+        minimum_successful=1,
+    )

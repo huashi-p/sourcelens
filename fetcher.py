@@ -6,7 +6,7 @@ from urllib.parse import urljoin
 import httpx
 from bs4 import BeautifulSoup
 
-from schemas import SourceRequest, SourceStatus
+from schemas import SourceStatus
 from url_guard import SourceReadError, validate_public_url
 
 
@@ -128,9 +128,12 @@ async def fetch_with_retry(client, url):
 
 
 async def fetch_sources(question, urls):
-    request = SourceRequest(question=question, urls=urls)
-    semaphore = asyncio.Semaphore(MAX_CONCURRENT)
+    urls = list(urls)
 
+    if not 1 <= len(urls) <= 5:
+        raise ValueError("urls 必须包含 1 到 5 个网址")
+
+    semaphore = asyncio.Semaphore(MAX_CONCURRENT)
     async with httpx.AsyncClient(
         timeout=httpx.Timeout(SOURCE_TIMEOUT, connect=3.0),
         follow_redirects=False,
@@ -193,7 +196,7 @@ async def fetch_sources(question, urls):
                         ),
                     )
 
-        tasks = [safe_fetch(url) for url in request.urls]
+        tasks = [safe_fetch(url) for url in urls]
         return await asyncio.gather(*tasks)
 
 

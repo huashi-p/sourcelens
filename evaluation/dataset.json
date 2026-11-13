@@ -1,0 +1,255 @@
+{
+  "version": "2.0",
+  "captured_at": "2026-11-11",
+  "chunk_size": 800,
+  "chunk_overlap": 120,
+  "embedding_model": "BAAI/bge-m3",
+  "top_k": 5,
+  "groups": [
+    {
+      "id": "technical-documentation",
+      "domain": "technical",
+      "urls": [
+        "https://docs.python.org/3/library/asyncio-sync.html",
+        "https://www.python-httpx.org/async/"
+      ],
+      "questions": [
+        {
+          "id": "q001",
+          "question": "Semaphore 的内部计数器默认初始值是多少？",
+          "keyword_query": "Semaphore internal counter initial value",
+          "expected_source": "https://docs.python.org/3/library/asyncio-sync.html",
+          "relevant_quote": "The optional value argument gives the initial value for the internal counter ( 1 by default). If the given value is less than 0 a ValueError is raised.",
+          "answerable": true
+        },
+        {
+          "id": "q002",
+          "question": "BoundedSemaphore 与普通 Semaphore 有什么区别？",
+          "keyword_query": "BoundedSemaphore Semaphore release ValueError internal counter",
+          "expected_source": "https://docs.python.org/3/library/asyncio-sync.html",
+          "relevant_quote": "Bounded Semaphore is a version of Semaphore that raises a ValueError in release() if it increases the internal counter above the initial value .",
+          "answerable": true
+        },
+        {
+          "id": "q003",
+          "question": "asyncio.Lock 用于解决什么问题？",
+          "keyword_query": "asyncio lock exclusive access shared resource",
+          "expected_source": "https://docs.python.org/3/library/asyncio-sync.html",
+          "relevant_quote": "An asyncio lock can be used to guarantee exclusive access to a shared resource.",
+          "answerable": true
+        },
+        {
+          "id": "q004",
+          "question": "asyncio.Event 的主要作用是什么？",
+          "keyword_query": "asyncio event notify multiple tasks event happened",
+          "expected_source": "https://docs.python.org/3/library/asyncio-sync.html",
+          "relevant_quote": "An asyncio event can be used to notify multiple asyncio tasks that some event has happened.",
+          "answerable": true
+        },
+        {
+          "id": "q005",
+          "question": "这些资料是否给出了 asyncio.Semaphore 的具体性能基准数字？",
+          "expected_source": "https://docs.python.org/3/library/asyncio-sync.html",
+          "relevant_quote": "",
+          "answerable": false
+        }
+      ]
+    },
+    {
+      "id": "news",
+      "domain": "news",
+      "urls": [
+        "https://www.news.cn/ci/20261110/cded13e9519047218157832ed7d6b0ee/c.html",
+        "https://www.news.cn/ci/20260928/f3c1ef28931642048cd9f8cc6fb76a42/c.html"
+      ],
+      "questions": [
+        {
+          "id": "q006",
+          "question": "支持实体书店服务全民阅读的通知由多少个部门联合印发？",
+          "keyword_query": "部门 联合印发 实体书店 全民阅读 通知",
+          "expected_source": "https://www.news.cn/ci/20261110/cded13e9519047218157832ed7d6b0ee/c.html",
+          "relevant_quote": "近日,中央宣传部、中央社会工作部、教育部、财政部、住房城乡建设部、商务部、文化和旅游部、国家文物局联合印发《中共中央宣传部等关于支持实体书店服务全民阅读的通知》。",
+          "answerable": true
+        },
+        {
+          "id": "q007",
+          "question": "实体书店政策提出实施哪项店长成长计划？",
+          "keyword_query": "千名店长 成长培训计划 书店",
+          "expected_source": "https://www.news.cn/ci/20261110/cded13e9519047218157832ed7d6b0ee/c.html",
+          "relevant_quote": "通知提出,要提升书店供给质量,实施“千名店长”成长培训计划,增强书店选品能力,建立“书店主讲人”公共数据库,推动新华书店更新门店网点,鼓励民营书店差异化发展,依托书店开展阅读推广志愿服务活动。",
+          "answerable": true
+        },
+        {
+          "id": "q008",
+          "question": "文章介绍的磐安小城位于哪个省？",
+          "keyword_query": "浙江 群山 磐安 宝藏小城",
+          "expected_source": "https://www.news.cn/ci/20260928/f3c1ef28931642048cd9f8cc6fb76a42/c.html",
+          "relevant_quote": "在浙江的群山之间,藏着一座宝藏小城——磐安。",
+          "answerable": true
+        },
+        {
+          "id": "q009",
+          "question": "磐安拥有哪些与药材、茶叶相关的代表性称号？",
+          "keyword_query": "药材之乡 黄精之乡 生态龙井茶之乡 孔氏家庙",
+          "expected_source": "https://www.news.cn/ci/20260928/f3c1ef28931642048cd9f8cc6fb76a42/c.html",
+          "relevant_quote": "这里是中国药材之乡、中国黄精之乡、中国生态龙井茶之乡,此外,全国第三座孔氏家庙也坐落在这片土地上。",
+          "answerable": true
+        },
+        {
+          "id": "q010",
+          "question": "实体书店通知是否规定了每个县惠民购书券的具体发放金额？",
+          "expected_source": "https://www.news.cn/ci/20261110/cded13e9519047218157832ed7d6b0ee/c.html",
+          "relevant_quote": "",
+          "answerable": false
+        }
+      ]
+    },
+    {
+      "id": "public-services",
+      "domain": "public-service",
+      "urls": [
+        "https://education.news.cn/20261111/7f86aa9f050d4a78995a3783d6db0d54/c.html",
+        "https://www.news.cn/politics/20261023/ccf52aabf0bc4d7fb972df57388e1eec/c.html"
+      ],
+      "questions": [
+        {
+          "id": "q011",
+          "question": "高校毕业生参加就业技能培训和创业培训后，取得哪些证书可以申请职业培训补贴？",
+          "keyword_query": "高校毕业生 职业培训补贴 就业技能培训 创业培训 证书",
+          "expected_source": "https://education.news.cn/20261111/7f86aa9f050d4a78995a3783d6db0d54/c.html",
+          "relevant_quote": "毕业年度高校毕业生参加就业技能培训和创业培训,培训后取得符合规定证书的(包括职业资格证书、职业技能等级证书、专项职业能力证书、培训合格证书),给予补贴。",
+          "answerable": true
+        },
+        {
+          "id": "q012",
+          "question": "吸纳哪些青年参加就业见习的单位可以申请就业见习补贴？",
+          "keyword_query": "就业见习补贴 离校2年内 未就业高校毕业生 登记失业青年",
+          "expected_source": "https://education.news.cn/20261111/7f86aa9f050d4a78995a3783d6db0d54/c.html",
+          "relevant_quote": "对吸纳离校2年内未就业高校毕业生和16-24岁登记失业青年参加就业见习的单位,给予就业见习补贴,用于见习单位支付见习人员见习期间基本生活费、为见习人员办理人身意外伤害保险,以及对见习人员的指导管理费用。",
+          "answerable": true
+        },
+        {
+          "id": "q013",
+          "question": "调查显示，公众对居家养老服务的期待已经从哪些方面拓展到哪些方面？",
+          "keyword_query": "居家养老服务 基本生活照料 专业护理 康复支持 应急响应 居家安全",
+          "expected_source": "https://www.news.cn/politics/20261023/ccf52aabf0bc4d7fb972df57388e1eec/c.html",
+          "relevant_quote": "调查显示,随着家庭养老需求日益多元,公众对居家养老服务的期待正从基本生活照料,延伸至专业护理、康复支持、应急响应和居家安全等多个方面。",
+          "answerable": true
+        },
+        {
+          "id": "q014",
+          "question": "有多少受访者希望尽可能由固定人员提供居家养老服务？",
+          "keyword_query": "68.53% 受访者 固定人员 居家养老服务",
+          "expected_source": "https://www.news.cn/politics/20261023/ccf52aabf0bc4d7fb972df57388e1eec/c.html",
+          "relevant_quote": "调查中,68.53%的受访者希望尽可能由固定人员提供服务。",
+          "answerable": true
+        },
+        {
+          "id": "q015",
+          "question": "这项调查是否列出了每个城市居家养老服务的具体收费标准？",
+          "expected_source": "https://www.news.cn/politics/20261023/ccf52aabf0bc4d7fb972df57388e1eec/c.html",
+          "relevant_quote": "",
+          "answerable": false
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "domain": "health",
+      "urls": [
+        "https://www.who.int/news-room/fact-sheets/detail/physical-activity",
+        "https://www.who.int/news-room/fact-sheets/detail/healthy-diet"
+      ],
+      "questions": [
+        {
+          "id": "q016",
+          "question": "WHO 如何定义身体活动？",
+          "keyword_query": "WHO physical activity bodily movement skeletal muscles energy expenditure",
+          "expected_source": "https://www.who.int/news-room/fact-sheets/detail/physical-activity",
+          "relevant_quote": "WHO defines physical activity as any bodily movement produced by skeletal muscles that requires energy expenditure.",
+          "answerable": true
+        },
+        {
+          "id": "q017",
+          "question": "全球建议成年人每周至少进行多少分钟中等强度身体活动？",
+          "keyword_query": "global recommendations 150 minutes moderate-intensity physical activity per week",
+          "expected_source": "https://www.who.int/news-room/fact-sheets/detail/physical-activity",
+          "relevant_quote": "That is, they do not meet the global recommendations of at least 150 minutes of moderate-intensity physical activity per week.",
+          "answerable": true
+        },
+        {
+          "id": "q018",
+          "question": "10 岁以上人群每天建议至少摄入多少克水果和蔬菜？",
+          "keyword_query": "older than 10 years 400 grams fruits vegetables per day",
+          "expected_source": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+          "relevant_quote": "Everyone older than 10 years of age should aim for at least 400 grams of fruits and vegetables per day",
+          "answerable": true
+        },
+        {
+          "id": "q019",
+          "question": "WHO 建议成年人每天盐摄入量低于多少？",
+          "keyword_query": "adults salt intake less than 5 grams per day",
+          "expected_source": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+          "relevant_quote": "In adults, salt intake should be limited to less than 5 grams per day (2 grams per day sodium).",
+          "answerable": true
+        },
+        {
+          "id": "q020",
+          "question": "这些健康资料是否为高血压患者提供了具体药物剂量？",
+          "expected_source": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+          "relevant_quote": "",
+          "answerable": false
+        }
+      ]
+    },
+    {
+      "id": "life-guide",
+      "domain": "life-guide",
+      "urls": [
+        "https://www.news.cn/travel/20261110/05a9b48025984f68bb7ab17fcd7b924c/c.html",
+        "https://www.news.cn/travel/20261106/983fae5b8cca4b5cbca913525b7cd857/c.html"
+      ],
+      "questions": [
+        {
+          "id": "q021",
+          "question": "2025 年 11 月至 2026 年 10 月，海南离岛免税购物金额是多少？",
+          "keyword_query": "海口海关 海南 离岛免税 购物金额 334.5亿元",
+          "expected_source": "https://www.news.cn/travel/20261110/05a9b48025984f68bb7ab17fcd7b924c/c.html",
+          "relevant_quote": "据海口海关统计,2025年11月至2026年10月,海南离岛免税购物金额、购物人数、购物数量分别为334.5亿元、487.9万人次、2764.4万件,同比分别增长13.8%、8.6%、2.4%。",
+          "answerable": true
+        },
+        {
+          "id": "q022",
+          "question": "海南离岛免税商品品类从多少大类扩充到了多少大类？",
+          "keyword_query": "离岛免税商品品类 45大类 47大类 国内商品",
+          "expected_source": "https://www.news.cn/travel/20261110/05a9b48025984f68bb7ab17fcd7b924c/c.html",
+          "relevant_quote": "离岛免税政策调整后,离岛免税商品品类由45大类扩充至47大类,且服装服饰、鞋帽、茶等6类优质国内商品进入免税渠道销售。",
+          "answerable": true
+        },
+        {
+          "id": "q023",
+          "question": "黑龙江冬季冰雪旅游“百日行动”从什么时候持续到什么时候？",
+          "keyword_query": "黑龙江 冬季冰雪旅游 百日行动 2026年11月8日 2027年2月28日",
+          "expected_source": "https://www.news.cn/travel/20261106/983fae5b8cca4b5cbca913525b7cd857/c.html",
+          "relevant_quote": "黑龙江省将于2026年11月8日至2027年2月28日全面开展冬季冰雪旅游“百日行动”,围绕“冰雪世界·燃情龙江”主题,丰富全链条供给,优化全过程体验。",
+          "answerable": true
+        },
+        {
+          "id": "q024",
+          "question": "黑龙江为游客提供了哪种高铁车票与景区门票联动优惠？",
+          "keyword_query": "哈伊高铁 哈大齐高铁 高铁车票 景区门票 联动优惠",
+          "expected_source": "https://www.news.cn/travel/20261106/983fae5b8cca4b5cbca913525b7cd857/c.html",
+          "relevant_quote": "在基础设施和公共服务方面,黑龙江依托哈伊高铁、哈大齐高铁推出“高铁车票+景区门票”联动优惠,并加密重点客源航班。",
+          "answerable": true
+        },
+        {
+          "id": "q025",
+          "question": "这些页面是否列出了每个城市酒店的具体房间价格？",
+          "expected_source": "https://www.news.cn/travel/20261106/983fae5b8cca4b5cbca913525b7cd857/c.html",
+          "relevant_quote": "",
+          "answerable": false
+        }
+      ]
+    }
+  ]
+}

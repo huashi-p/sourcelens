@@ -335,3 +335,44 @@ def test_compare_rejects_unknown_source_id(monkeypatch):
         run(compare.compare_sources("比较来源", sources))
 
     assert call_count == 2
+
+from chunking import split_text
+
+
+def test_split_text_builds_bounded_chunks():
+    text = "\n\n".join(
+        f"第 {index} 段包含一些用于测试的说明文字。" * 20
+        for index in range(8)
+    )
+    chunks = split_text(text, max_chars=300, overlap=50)
+
+    assert len(chunks) >= 2
+    assert all(0 < len(chunk) <= 300 for chunk in chunks)
+    assert len(chunks) == len(set(chunks))
+
+from rag_answer import validate_rag_answer
+
+
+def test_rag_rejects_fake_quote():
+    chunk = {
+        "content": "Semaphore 用于限制并发数量。",
+        "url": "https://example.com/docs",
+    }
+    payload = {
+        "answerable": True,
+        "answer": "它可以限制并发。",
+        "citations": [
+            {
+                "text": "限制并发",
+                "source_id": "SOURCE_1",
+                "evidence_quote": "网页里不存在的话",
+            }
+        ],
+        "limitations": [],
+    }
+
+    with pytest.raises(ValueError):
+        validate_rag_answer(
+            payload,
+            {"SOURCE_1": chunk},
+        )
